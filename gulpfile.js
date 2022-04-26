@@ -10,7 +10,7 @@ import server from './gulp/tasks/server.js';
 import images from './gulp/tasks/images.js';
 import svgSprite from './gulp/tasks/svgSprite.js';
 import js from './gulp/tasks/js.js';
-
+import deployPages from './gulp/tasks/deploy.js';
 
 global.app = {
     browserSync: browserSync.create(),
@@ -26,7 +26,7 @@ function watch(cb) {
     gulp.watch(paths.watch.html, html);
     gulp.watch(paths.watch.style, style);
     gulp.watch(paths.watch.images, images);
-    gulp.watch(paths.watch.svgSprite, svgSprite);
+    gulp.watch(paths.watch.sprite, svgSprite);
     gulp.watch(paths.watch.js, js);
 
     cb();
@@ -44,11 +44,8 @@ const mainTasks = gulp.parallel(
     js
 );
 
-const build = gulp.series(clean, mainTasks);
-const serve = gulp.series(build, server, watch);
+export const build = gulp.series(clean, mainTasks);
+export const serve = gulp.series(build, server, watch);
+export const deploy = gulp.series(build, deployPages);
 
-
-
-export { build };
 export default serve;
-
