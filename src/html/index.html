@@ -1,41 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <!-- Pixel Glass -->
-  <style>
-    HTML {
-      background-repeat: no-repeat;
-      background-position: 50% 0;
-      /* По умолчанию показывается мобильный макет */
-      background-image: url("@img/pixelglass/index-320.png");
-    }
-
-    /* Планшет */
-    @media (min-width: 768px) {
-      HTML {
-        /* Планшетный макет */
-        background-image: url("@img/pixelglass/index-/768.png");
-      }
-    }
-
-    /* Десктоп */
-    @media (min-width: 1440px) {
-      HTML {
-        /* Десктопный макет */
-        background-image: url("@img/pixelglass/index-1440.png");
-      }
-    }
-  </style>
-  <!-- <link href="../node_modules/pixel-glass/styles.css" rel="stylesheet">
-  <script src="../node_modules/pixel-glass/script.js"></script> -->
-  <link href="styles.css" rel="stylesheet">
-<script src="script.js"></script>
-  <!-- // Pixel Glass -->
-</head>
+<html lang="ru">
+@@include("./includes/head.html", {title: "Cat Energy"})
 <body>
 
 

@@ -15,7 +15,11 @@ function html() {
                 title: 'HTML',
                 message: 'Error: <%= error.message%>'
             })))
-        .pipe(fileinclude())
+        .pipe(fileinclude({
+            context: {
+                isDev: app.isDev
+            }
+        }))
         .pipe(replace(/@img\//g, 'img/'))
         // .pipe(replace(
         //     /(@scss\/).*(\.scss)/g,
