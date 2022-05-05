@@ -6,7 +6,12 @@ function copy() {
         .pipe(gulp.dest(app.paths.build.files));
 }
 
+function favicons(){
+    return gulp.src(app.paths.src.favicons)
+        .pipe(gulp.dest(app.paths.buildFolder));
+}
 
 
 
-export default copy;
+
+export default gulp.parallel(copy, favicons);

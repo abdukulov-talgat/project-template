@@ -14,13 +14,17 @@ const paths = {
         fonts: `${srcFolder}/fonts/`,
         html: `${srcFolder}/html/*.html`, // Все страницы должны лежать в корне папки html
         style: `${srcFolder}/scss/style.scss`,
-        js: `${srcFolder}/js/script.js`,
+        js: `${srcFolder}/js/app.js`,
         images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
         svg: [
             `${srcFolder}/img/**/*.svg`,
             `!${srcFolder}/img/icons/**`
         ],
-        sprite: `${ srcFolder }/img/icons/**/*.svg`,
+        sprite: `${srcFolder}/img/icons/**/*.svg`,
+        favicons: [ // только *.manifest и *.ico которые помещаются в корень проекта, остальные фавиконки в папке img. Т.к. оптимизация
+             `${srcFolder}/favicons/*.webmanifest`,
+             `${srcFolder}/favicons/*.ico`,
+        ],
     },
     build: {
         files: `${buildFolder}/files/`,

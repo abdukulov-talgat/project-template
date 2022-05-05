@@ -24,7 +24,7 @@ function html() {
         //     }))
         // .pipe(replace(/@js\//g, 'js/'))
         .pipe(gulp.dest(app.paths.build.html))
-        .pipe(app.browserSync.stream());
+        // .pipe(app.browserSync.reload());
 }
 
 

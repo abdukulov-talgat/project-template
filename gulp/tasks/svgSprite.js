@@ -23,6 +23,9 @@ function sprite() {
                 stack: {
                     sprite: `../icons/icons.svg`,
                     example: app.isDev,
+                    // bust: false,
+                    rootviewbox: false,
+
                 },
                 // css: {example: true}, // Create a «css» sprite
                 // view: { example: true }, // Create a «view» sprite
@@ -31,6 +34,7 @@ function sprite() {
                 // stack: { example: true } // Create a «stack» sprite
             }
         }))
+        .pipe(replace(/viewBox="[\d\s]*"/mi, "")) //remove viewbox from root. Already released in svg-sprite beta.
         .pipe(gulp.dest(app.paths.build.images))
         .pipe(app.browserSync.stream());
 }

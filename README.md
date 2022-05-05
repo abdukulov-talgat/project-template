@@ -1,3 +1,3 @@
 # project-template
 
-## Change this file after copy
+## Учебный проект pink. Адаптивный дизайн

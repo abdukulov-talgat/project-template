@@ -16,7 +16,7 @@ function js() {
             mode: app.isDev ? 'development' : 'production',
             devtool: 'source-map',
             output: {
-                filename: 'script.min.js',
+                filename: 'app.min.js',
             },
             module: {
                 rules: [

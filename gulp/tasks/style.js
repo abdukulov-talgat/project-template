@@ -25,7 +25,7 @@ function styles() {
         .pipe(gulpif(app.isDev, sourcemaps.init()))
         .pipe(sass())
         .pipe(replace(/@img\//g, '../img/'))
-        .pipe(groupCssMediaQueries())
+        // .pipe(groupCssMediaQueries())   //Хз юзать или нет, меняет порядок медиа-выражений
         .pipe(autorprefixer())
         .pipe(gulp.dest(app.paths.build.style))
         .pipe(cleanCSS())
